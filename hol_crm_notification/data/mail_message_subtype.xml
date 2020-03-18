@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <!-- NOTE -->
+        <function name="write" model="ir.model.data">
+            <function name="search" model="ir.model.data">
+                <value eval="[('module','=','mail'), ('name','=','mt_note')]"/>
+            </function>
+            <value eval="{'noupdate': False}" />
+        </function>
+        <record id="mail.mt_note" model="mail.message.subtype">
+            <field name="default">True</field>
+        </record>
+        <!-- LEAD CREATED -->
+        <function name="write" model="ir.model.data">
+            <function name="search" model="ir.model.data">
+                <value eval="[('module','=','crm'), ('name','=','mt_lead_create')]"/>
+            </function>
+            <value eval="{'noupdate': False}" />
+        </function>
+        <record id="crm.mt_lead_create" model="mail.message.subtype">
+            <field name="default">True</field>
+        </record>
+        <!-- STAGE CHANGED -->
+        <function name="write" model="ir.model.data">
+            <function name="search" model="ir.model.data">
+                <value eval="[('module','=','crm'), ('name','=','mt_lead_stage')]"/>
+            </function>
+            <value eval="{'noupdate': False}" />
+        </function>
+        <record id="crm.mt_lead_stage" model="mail.message.subtype">
+            <field name="default">True</field>
+        </record>
+        <!-- OPPORTUNITY WON -->
+        <function name="write" model="ir.model.data">
+            <function name="search" model="ir.model.data">
+                <value eval="[('module','=','crm'), ('name','=','mt_lead_won')]"/>
+            </function>
+            <value eval="{'noupdate': False}" />
+        </function>
+        <record id="crm.mt_lead_won" model="mail.message.subtype">
+            <field name="default">True</field>
+        </record>
+        <!-- OPPORTUNITY LOST -->
+        <function name="write" model="ir.model.data">
+            <function name="search" model="ir.model.data">
+                <value eval="[('module','=','crm'), ('name','=','mt_lead_lost')]"/>
+            </function>
+            <value eval="{'noupdate': False}" />
+        </function>
+        <record id="crm.mt_lead_lost" model="mail.message.subtype">
+            <field name="default">True</field>
+        </record>
+    </data>
+</odoo>
+
